@@ -1,0 +1,14 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'gogogo';
+  src        : url('./assets/gogogo.ttf');
+}
+
+body {
+  margin: 0;
+}
