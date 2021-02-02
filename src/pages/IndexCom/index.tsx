@@ -13,7 +13,7 @@ const IndexCom = () => {
       { "date": "2021-01-24", "count": 56.8 },
       { "date": "2021-01-31", "count": 55.5 },
       { "date": "2021-02-01", "count": 54.9 },
-      { "date": "2021-02-02", "count": 53.9 },
+      { "date": "2021-02-02", "count": 54.5 },
       // { "date": "2018-10-6", "count": 61 },
       // { "date": "2018-10-7", "count": 71 },
       // { "date": "2018-10-8", "count": 57 },
@@ -34,7 +34,7 @@ const IndexCom = () => {
         <Line user={mockData} />
       </div>
       <div>
-        <ChangeInfo />
+        <ChangeInfo data={mockData.activities} />
       </div>
       <div style={{ position: 'fixed', bottom: 0, height: '3em', width: '100%', fontFamily: 'gogogo' }}>
         <div>今日体重：<Input style={{ display: 'inline-block', width: '30%' }} />

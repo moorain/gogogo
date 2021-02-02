@@ -1,13 +1,17 @@
 import React from 'react'
 import styles from './index.css'
 
-const ChangeInfo = () => {
+const ChangeInfo = (props: any) => {
+  console.log(props, 'props')
+  const first = props?.data?.[0]?.count
+  const last = props?.data?.[props?.data?.length - 1]?.count;
+  const last2 = props?.data?.[props?.data?.length - 2]?.count;
   return (
     <div style={{ marginTop: '20px' }}>
       <div className={styles.showInfo}>
         <div style={{ fontSize: '1.4em' }}>数据分析:</div>
-        <div>相比于刚开始，你一共瘦了{<span style={{ fontSize: '1.6em' }}>{12}</span>}kg，加油！</div>
-        <div>相比上次数据，你瘦了{<span style={{ fontSize: '1.6em' }}>{12}</span>}kg，继续加油！</div>
+        <div>相比于刚开始，你一共瘦了{<span style={{ fontSize: '1.6em' }}>{(first - last).toFixed(2)}</span>}kg，加油！</div>
+        <div>相比上次数据，你瘦了{<span style={{ fontSize: '1.6em' }}>{(last2 - last).toFixed(2)}</span>}kg，继续加油！</div>
       </div>
       <div className={styles.showInfo}>
         <div style={{ fontSize: '1.4em', marginTop: 20 }}>食谱（一阶段）:</div>
