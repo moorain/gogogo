@@ -1,6 +1,15 @@
 .title {
   font-size  : 1.4em;
+  padding    : .5em 0;
   /* color   : rgb(125, 137, 115); */
+  color      : rgb(123, 139, 113);
+  font-family: 'gogogo'
+}
+
+.showInfo {
+  text-align : left;
+  padding    : 0 1em;
+  font-size  : 1.2em;
   color      : rgb(148, 160, 138);
   font-family: 'gogogo'
 }

@@ -1,14 +1,47 @@
 import React from 'react'
 import Title from './Title'
-const IndexCom = () => {
-    return (
-        <div>
-            <Title count={22} />
-            <div style={{ margin: 10, padding: 20, height: 300, background: 'rgb(182, 193, 177)' }}>
+import Line from './LineChart'
+import { Input, Button } from 'antd'
+import ChangeInfo from './ChangeInfo'
 
-            </div>
-        </div>
-    )
+const IndexCom = () => {
+  const mockData: any = {
+    'name': 'Bob',
+    'gender': 'Male',
+    'age': 33,
+    'activities': [
+      { "date": "2018-10-2", "count": 56 },
+      { "date": "2018-10-3", "count": 55 },
+      { "date": "2018-10-4", "count": 70 },
+      { "date": "2018-10-5", "count": 35 },
+      { "date": "2018-10-6", "count": 61 },
+      { "date": "2018-10-7", "count": 71 },
+      { "date": "2018-10-8", "count": 57 },
+      { "date": "2018-10-9", "count": 14 },
+      { "date": "2018-10-10", "count": 72 },
+      { "date": "2018-10-11", "count": 75 },
+      // { "date": "2018-10-12", "count": 35 },
+      // { "date": "2018-10-13", "count": 27 },
+      // { "date": "2018-10-14", "count": 57 },
+      // { "date": "2018-10-15", "count": 77 }
+    ]
+  }
+
+  return (
+    <div>
+      <Title count={22} />
+      <div style={{ padding: '10px 0px', height: 240, background: 'rgb(182, 193, 177)' }}>
+        <Line user={mockData} />
+      </div>
+      <div>
+        <ChangeInfo />
+      </div>
+      <div style={{ position: 'fixed', bottom: 0, height: '3em', width: '100%', fontFamily: 'gogogo' }}>
+        <div>今日体重：<Input style={{ display: 'inline-block', width: '30%' }} />
+          <Button style={{ width: '30%', marginLeft: '.6em' }}><span >提交</span></Button></div>
+      </div>
+    </div>
+  )
 }
 
 export default IndexCom;
