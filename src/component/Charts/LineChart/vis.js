@@ -44,7 +44,7 @@ const draw = (props) => {
 
     // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function (d) { return +d.count; })])
+        .domain([45, d3.max(data, function (d) { return +d.count; })])
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
