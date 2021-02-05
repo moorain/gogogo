@@ -1,7 +1,8 @@
 import { IConfig } from 'umi-types';
 
 // ref: https://umijs.org/config/
-const config: IConfig =  {
+const config: IConfig = {
+  history: 'hash',
   treeShaking: true,
   routes: [
     {
@@ -20,7 +21,7 @@ const config: IConfig =  {
       dynamicImport: false,
       title: 'gogogo',
       dll: false,
-      
+
       routes: {
         exclude: [
           /components\//,

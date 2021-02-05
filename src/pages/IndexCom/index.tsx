@@ -6,27 +6,19 @@ import ChangeInfo from './ChangeInfo'
 
 const IndexCom = () => {
   const mockData: any = {
-    'name': 'Bob',
+    'name': '彭帆',
     'gender': 'Male',
-    'age': 33,
+    'age': 28,
     'activities': [
       { "date": "2021-01-24", "count": 56.8 },
       { "date": "2021-01-31", "count": 55.5 },
       { "date": "2021-02-01", "count": 54.9 },
       { "date": "2021-02-02", "count": 54.5 },
-      // { "date": "2018-10-6", "count": 61 },
-      // { "date": "2018-10-7", "count": 71 },
-      // { "date": "2018-10-8", "count": 57 },
-      // { "date": "2018-10-9", "count": 14 },
-      // { "date": "2018-10-10", "count": 72 },
-      // { "date": "2018-10-11", "count": 75 },
-      // { "date": "2018-10-12", "count": 35 },
-      // { "date": "2018-10-13", "count": 27 },
-      // { "date": "2018-10-14", "count": 57 },
-      // { "date": "2018-10-15", "count": 77 }
+      { "date": "2021-02-03", "count": 54.0 },
+      { "date": "2021-02-04", "count": 53.8 },
     ]
   }
-
+  // mockData.activities = window?.data;
   return (
     <div>
       <Title count={22} />
@@ -36,10 +28,10 @@ const IndexCom = () => {
       <div>
         <ChangeInfo data={mockData.activities} />
       </div>
-      <div style={{ position: 'fixed', bottom: 0, height: '3em', width: '100%', fontFamily: 'gogogo' }}>
+      {/* <div style={{ position: 'fixed', bottom: 0, height: '3em', width: '100%', fontFamily: 'gogogo' }}>
         <div>今日体重：<Input style={{ display: 'inline-block', width: '30%' }} />
           <Button style={{ width: '30%', marginLeft: '.6em' }}><span >提交</span></Button></div>
-      </div>
+      </div> */}
     </div>
   )
 }
