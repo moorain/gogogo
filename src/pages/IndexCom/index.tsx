@@ -2,26 +2,31 @@ import React from 'react'
 import Title from './Title'
 import Line from './LineChart'
 import { Input, Button } from 'antd'
-import ChangeInfo from './ChangeInfo'
+import ChangeInfo from './ChangeInfo';
+
+function DateDiff(sDate1, sDate2) {    //sDate1和sDate2是2002-12-18格式 
+  var aDate, oDate1, oDate2, iDays
+  aDate = sDate1.split("-")
+  oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])    //转换为12-18-2002格式 
+  aDate = sDate2.split("-")
+  oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
+  iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24)    //把相差的毫秒数转换为天数 
+  return iDays
+}
 
 const IndexCom = () => {
   const mockData: any = {
     'name': '彭帆',
     'gender': 'Male',
     'age': 28,
-    'activities': [
-      { "date": "2021-01-24", "count": 56.8 },
-      { "date": "2021-01-31", "count": 55.5 },
-      { "date": "2021-02-01", "count": 54.9 },
-      { "date": "2021-02-02", "count": 54.5 },
-      { "date": "2021-02-03", "count": 54.0 },
-      { "date": "2021-02-04", "count": 53.8 },
-    ]
+    'activities': window?.data || []
   }
-  // mockData.activities = window?.data;
+  const start = mockData?.activities?.[0]?.date;
+  const end = mockData?.activities?.[mockData?.activities?.length - 1]?.date;
+
   return (
     <div>
-      <Title count={22} />
+      <Title count={DateDiff(start, end)} />
       <div style={{ padding: '10px 0px', height: 240, background: 'rgb(182, 193, 177)' }}>
         <Line user={mockData} />
       </div>
